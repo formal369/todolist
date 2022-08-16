@@ -23,13 +23,15 @@ body {
 }
 
 #under-line {
-  height: 4px;
+  height: 5px;
   background-color: pink;
   position: absolute;
-  width: 80px;
+  width: 60px;
   left: 0;
   top: 52px;
   padding: 0;
+  position: absolute;
+  transition: 0.5s;
 }
 
 .task {

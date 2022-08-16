@@ -12,9 +12,10 @@
 let taskInput = document.getElementById("task-input");
 let addButton = document.getElementById("add-button");
 let tabs = document.querySelectorAll(".task-tabs div")
+let taskBoard = document.getElementById("task-board");
+let underLine = document.getElementById("under-line");
 let taskList = [];
 let filteredList = [];
-let taskBoard = document.getElementById("task-board");
 let mode = 'all';
 addButton.addEventListener("click", addTask);
 
@@ -124,5 +125,16 @@ function deleteTask(id) {
   }
   render();
   console.log("삭제후", taskList);
+}
+
+// CSS
+for(let i=1;i<tabs.length;i++){
+  tabs[i].addEventListener("click", function(event){menuIndicator(event)})
+}
+
+function menuIndicator(event){
+  underLine.style.left = event.currentTarget.offsetLeft + "px";
+  underLine.style.width = event.currentTarget.offsetWidth + "px";
+  underLine.style.top = event.currentTarget.offsetTop + event.currentTarget.offsetHeight - 5 + "px"
 }
 
